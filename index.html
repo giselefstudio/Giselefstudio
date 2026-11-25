@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gisele Almeida | Embelezamento do Olhar</title>
+<meta name="description" content="Realce sua beleza com Gisele Almeida. Especialista em cílios, sobrancelhas e estética facial no Grajaú, SP.">
+
+<style>
+:root {
+  --black:#202020;
+  --dark:#303030;
+  --gray:#777570;
+  --light:#f4f2ee;
+  --white:#fff;
+  --gold:#c5a45c;
+  --gold2:#e4d3a5;
+  --border:#ded9cf;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:var(--black);
+  line-height:1.6;
+}
+button,input,select,textarea{font:inherit}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+.container{width:min(1120px,90%);margin:auto}
+.gold{color:var(--gold)}
+.kicker{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:bold;
+}
+.heading{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.15;
+  margin:10px 0 15px;
+}
+.section-intro{
+  color:var(--gray);
+  max-width:580px;
+  margin:0 auto 38px;
+}
+.section-head{text-align:center;margin-bottom:42px}
+section{padding:85px 0}
+.btn{
+  display:inline-block;
+  border:1px solid var(--gold);
+  background:var(--gold);
+  color:#211f1a;
+  padding:14px 23px;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+  transition:.25s;
+}
+.btn:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--gold2)}
+.btn-outline:hover{color:var(--black)}
+.topline{
+  background:var(--black);
+  color:var(--gold2);
+  text-align:center;
+  padding:8px;
+  font-size:10px;
+  letter-spacing:3px;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(32,32,32,.97);
+  color:white;
+  border-bottom:1px solid #ffffff18;
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo-text{
+  color:var(--gold2);
+  font-family:Georgia,serif;
+  font-size:20px;
+  letter-spacing:1px;
+}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-size:11px;letter-spacing:1px;color:#eee}
+.nav-links a:hover{color:var(--gold2)}
+.menu-button{
+  display:none;
+  background:none;
+  border:1px solid var(--gold);
+  color:var(--gold2);
+  padding:7px 11px;
+}
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+    linear-gradient(90deg,rgba(22,22,22,.96),rgba(22,22,22,.65)),
+    radial-gradient(circle at 80% 35%,#82745c,#343330 55%,#171717);
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;
+  border:1px solid #c5a45c55;
+  border-radius:50%;
+  right:-100px;top:100px;
+  box-shadow:0 0 0 35px #c5a45c0d,0 0 0 75px #c5a45c08;
+}
+.hero-content{position:relative;z-index:2;max-width:670px;padding:80px 0}
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:clamp(45px,8vw,85px);
+  font-weight:normal;
+  line-height:1.04;
+  margin:22px 0;
+}
+.hero p{color:#e2ded6;max-width:490px;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{font-size:11px;color:var(--gold2);margin-top:30px;letter-spacing:2px}
+.hero-art{
+  position:absolute;
+  right:8%;
+  bottom:0;
+  width:270px;
+  height:390px;
+  border:1px solid #c5a45c55;
+  border-radius:150px 150px 0 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#e5d5ae;
+  font-family:Georgia,serif;
+  text-align:center;
+  padding:25px;
+  background:linear-gradient(150deg,#77726955,#11111155);
+  z-index:1;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+}
+.photo-placeholder{
+  min-height:420px;
+  background:linear-gradient(145deg,#d6d2ca,#aaa59b);
+  border:1px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+  color:#4d4942;
+  font-family:Georgia,serif;
+  font-size:22px;
+}
+.about-copy p{color:var(--gray);margin:14px 0}
+.signature{font-family:Georgia,serif;font-style:italic;color:#a08345;font-size:25px;margin-top:20px}
+.dark{background:var(--black);color:white}
+.dark .section-intro{color:#c4c0b8}
+.tech-scroll{
+  display:flex;
+  overflow-x:auto;
+  gap:18px;
+  padding:5px 2px 22px;
+  scroll-snap-type:x mandatory;
+}
+.tech-card{
+  min-width:245px;
+  flex:0 0 30%;
+  background:#30302e;
+  border:1px solid #c5a45c55;
+  scroll-snap-align:start;
+}
+.tech-image{
+  height:175px;
+  background:linear-gradient(135deg,#777269,#343330);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#e4d3a5;
+  font-family:Georgia,serif;
+  text-align:center;
+  padding:15px;
+}
+.tech-copy{padding:20px}
+.tech-copy h3{font-family:Georgia,serif;font-size:23px;color:var(--gold2);font-weight:normal}
+.tech-copy p{font-size:13px;color:#c8c5bd;margin:8px 0 14px}
+.tech-copy a{font-size:11px;color:var(--gold2);letter-spacing:1px}
+.scroll-hint{text-align:center;color:#aaa;font-size:11px;margin-top:3px}
+.mapping-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+.mapping-visual{
+  background:#e8e4dc;
+  border:1px solid var(--border);
+  padding:25px;
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.mapping-visual svg{width:100%;max-width:440px}
+.mapping-copy p{color:var(--gray);margin:12px 0}
+.mapping-copy ul{padding-left:20px;color:var(--gray);font-size:14px}
+.quiz{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  border:1px solid var(--border);
+  padding:32px;
+  box-shadow:0 10px 35px #00000008;
+}
+.progress{height:4px;background:#e6e1d7;margin-bottom:24px}
+.progress span{display:block;height:100%;width:33%;background:var(--gold);transition:.3s}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.quiz h3{font-family:Georgia,serif;font-size:25px;font-weight:normal;margin-bottom:20px}
+.quiz-option{
+  display:block;
+  border:1px solid var(--border);
+  padding:13px 15px;
+  margin:9px 0;
+  cursor:pointer;
+  transition:.2s;
+}
+.quiz-option:hover,.quiz-option.selected{
+  border-color:var(--gold);
+  background:#f8f4e9;
+}
+.quiz-option input{margin-right:9px;accent-color:#a08345}
+.quiz-buttons{display:flex;justify-content:space-between;margin-top:23px;gap:10px}
+.quiz-result{
+  display:none;
+  padding:22px;
+  margin-top:20px;
+  background:#f5f0e4;
+  border-left:3px solid var(--gold);
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.gallery-slot{
+  aspect-ratio:4/5;
+  background:linear-gradient(145deg,#d8d4cc,#aaa49a);
+  border:1px solid #c6b994;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#565149;
+  padding:12px;
+  font-family:Georgia,serif;
+}
+.gallery-note{text-align:center;color:var(--gray);font-size:12px;margin-top:20px}
+.price-area{max-width:850px;margin:auto}
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+.tab{
+  padding:12px 25px;
+  border:1px solid var(--gold);
+  color:var(--black);
+  background:transparent;
+  font-size:12px;
+}
+.tab.active{background:var(--black);color:var(--gold2)}
+.price-table{width:100%;border-collapse:collapse;background:white}
+.price-table th{
+  background:var(--black);
+  color:var(--gold2);
+  text-align:left;
+  padding:15px;
+  font-size:12px;
+  letter-spacing:1px;
+}
+.price-table td{padding:15px;border-bottom:1px solid var(--border);font-size:14px}
+.price-table td:last-child{text-align:right;font-weight:bold;color:#98783c}
+.price-note{text-align:center;font-size:12px;color:var(--gray);margin-top:16px}
+.calculator{
+  background:#e9e5dc;
+  padding:30px;
+  max-width:700px;
+  margin:45px auto 0;
+  text-align:center;
+}
+.calculator h3{font-family:Georgia,serif;font-size:26px;font-weight:normal}
+.calculator select{max-width:400px;margin:15px auto}
+.calc-result{font-weight:bold;color:#98783c;margin-top:15px}
+.faq{max-width:800px;margin:auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{
+  width:100%;
+  border:0;
+  background:none;
+  padding:20px 3px;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-family:Georgia,serif;
+  font-size:19px;
+  color:var(--black);
+}
+.faq-answer{display:none;color:var(--gray);font-size:14px;padding:0 3px 20px}
+.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-question span{transform:rotate(45deg)}
+.booking{
+  background:var(--black);
+  color:white;
+}
+.booking .section-intro{color:#c4c0b8}
+.booking-form{
+  max-width:700px;
+  background:#fff;
+  color:var(--black);
+  padding:32px;
+  margin:auto;
+}
+.booking-form label{display:block;font-size:12px;font-weight:bold;margin:15px 0 6px}
+.booking-form input,.booking-form select,.booking-form textarea{
+  width:100%;
+  border:1px solid var(--border);
+  padding:13px;
+  background:#fff;
+}
+.booking-form button{width:100%;margin-top:22px}
+.deposit-note{font-size:12px;color:#777;margin-top:16px}
+.location{
+  text-align:center;
+  background:#e9e5dc;
+}
+.location h2{font-family:Georgia,serif;font-weight:normal;font-size:35px;margin:12px}
+.location p{color:var(--gray)}
+footer{
+  background:#171717;
+  color:#d5d0c5;
+  text-align:center;
+  padding:40px 15px;
+  font-size:12px;
+}
+footer strong{color:var(--gold2);font-family:Georgia,serif;font-size:19px}
+.social{display:flex;justify-content:center;gap:20px;margin:20px}
+.whatsapp{
+  position:fixed;
+  z-index:80;
+  right:18px;
+  bottom:18px;
+  background:#218b53;
+  color:white;
+  padding:13px 18px;
+  border-radius:35px;
+  font-size:13px;
+  box-shadow:0 5px 18px #0003;
+}
+@media(max-width:800px){
+  .nav{padding:14px 0;flex-wrap:wrap}
+  .menu-button{display:block}
+  .nav-links{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:12px 0}
+  .nav-links.show{display:flex}
+  .hero{min-height:570px}
+  .hero-art{opacity:.25;right:-80px}
+  .about-grid,.mapping-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .tech-card{flex-basis:75%}
+}
+@media(max-width:480px){
+  section{padding:65px 0}
+  .quiz,.booking-form{padding:22px 16px}
+  .price-table td,.price-table th{padding:11px 8px;font-size:12px}
+  .tabs{gap:5px}
+  .tab{padding:10px 14px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topline">BELEZA • AUTOCUIDADO • AUTOESTIMA</div>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo-text">GISELE ALMEIDA</a>
+    <button class="menu-button" onclick="toggleMenu()">MENU ☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#sobre">SOBRE MIM</a>
+      <a href="#tecnicas">TÉCNICAS</a>
+      <a href="#quiz">DESCUBRA SEU ESTILO</a>
+      <a href="#portfolio">PORTFÓLIO</a>
+      <a href="#valores">VALORES</a>
+      <a href="#agendar">AGENDAR</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <div class="kicker">Embelezamento do olhar</div>
+      <h1>Seu olhar.<br><span class="gold">Sua essência.</span></h1>
+      <p>
+        Mais do que realçar a beleza, quero proporcionar uma
+        experiência de cuidado, autoestima e carinho em cada detalhe.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#agendar">QUERO AGENDAR</a>
+        <a class="btn btn-outline" href="#tecnicas">CONHECER TÉCNICAS</a>
+      </div>
+      <div class="hero-note">GRAJAÚ • SÃO PAULO</div>
+    </div>
+  </div>
+  <div class="hero-art">
+    Espaço reservado<br>para sua bonequinha<br>e sua identidade visual
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="photo-placeholder">
+      SUA FOTO AQUI<br>
+      <small>Apresentação da Gisele</small>
+    </div>
+    <div class="about-copy">
+      <div class="kicker">Muito prazer!</div>
+      <h2 class="heading">Eu sou a Gisele.</h2>
+      <p>
+      <h2>Prazer, sou a Gisele!</h2>
+
+<p>
+Tenho 27 anos e trabalho com embelezamento do olhar. Minha história começou em 2021, quando iniciei os atendimentos de sobrancelhas a domicílio. Com o tempo, senti vontade de ter meu próprio espaço e hoje recebo minhas clientes no meu Studio, preparado com muito carinho na minha casa.
+</p>
+
+<p>
+Sempre tive vontade de aprender extensão de cílios, mas foi através de um curso de sobrancelhas que ganhei como brinde que me apaixonei por essa área. Neste ano comecei também minha jornada com os cílios e descobri o quanto amo esse trabalho!
+</p>
+
+<p>
+Atualmente, trabalho com design de sobrancelhas, extensão de cílios, Lash Lifting, Brow Lamination e Hydragloss.
+</p>
+
+<p>
+Estou sempre buscando aprender, evoluir e aperfeiçoar minhas técnicas, porque acredito que cada atendimento é uma oportunidade de cuidar da autoestima e fazer alguém se sentir ainda mais bonita.
+</p>
+
+<p><strong>Será um prazer receber você no meu cantinho! 💛</strong></p>
+      </p>
+      <div class="signature">Com carinho, Gisele Almeida</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="tecnicas">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Extensão de cílios</div>
+      <h2 class="heading">Encontre seu efeito favorito</h2>
+      <p class="section-intro">
+        Cada técnica possui uma personalidade. Conheça as opções
+        e descubra qual combina com o resultado que você deseja.
+      </p>
+    </div>
+
+    <div class="tech-scroll">
+      <article class="tech-card">
+        <div class="tech-image">FOTO DO VOLUME BRASILEIRO</div>
+        <div class="tech-copy">
+          <h3>Brasileiro</h3>
+          <p>Um efeito definido, delicado e versátil para valorizar o olhar.</p>
+          <a href="#valores">VER VALOR →</a>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-image">FOTO DO VOLUME EGÍPCIO</div>
+        <div class="tech-copy">
+          <h3>Egípcio</h3>
+          <p>Mais preenchimento e destaque para quem ama volume.</p>
+          <a href="#valores">VER VALOR →</a>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-image">FOTO DO VOLUME GLAMOUR</div>
+        <div class="tech-copy">
+          <h3>Glamour</h3>
+          <p>Um visual mais intenso, com presença e sofisticação.</p>
+          <a href="#valores">VER VALOR →</a>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-image">FOTO DO EFEITO FOX</div>
+        <div class="tech-copy">
+          <h3>Fox Eyes</h3>
+          <p>Um olhar alongado e marcante, com efeito elegante.</p>
+          <a href="#valores">VER VALOR →</a>
+        </div>
+      </article>
+    </div>
+    <div class="scroll-hint">DESLIZE PARA O LADO E CONHEÇA AS TÉCNICAS →</div>
+  </div>
+</section>
+
+<section id="mapeamento">
+  <div class="container mapping-grid">
+    <div class="mapping-visual">
+      <svg viewBox="0 0 430 220" role="img" aria-label="Ilustração de mapeamento de cílios">
+        <path d="M35 125 Q215 5 395 125 Q215 210 35 125Z"
+          fill="none" stroke="#98783c" stroke-width="3"/>
+        <path d="M35 125 Q215 5 395 125"
+          fill="none" stroke="#303030" stroke-width="2"/>
+        <path d="M75 105 L60 75 M110 83 L103 48 M150 68 L150 32 M195 59 L197 24 M240 62 L247 29 M285 76 L300 44 M330 95 L350 68"
+          stroke="#303030" stroke-width="3" stroke-linecap="round"/>
+        <path d="M35 125 Q215 205 395 125" fill="none" stroke="#98783c" stroke-width="2"/>
+        <text x="215" y="188" text-anchor="middle" fill="#71664e" font-size="12">ILUSTRAÇÃO DE MAPEAMENTO</text>
+      </svg>
+    </div>
+    <div class="mapping-copy">
+      <div class="kicker">Personalização</div>
+      <h2 class="heading">Cada olhar é único.</h2>
+      <p>
+        O mapeamento ajuda a distribuir os comprimentos dos fios
+        para construir o efeito desejado.
+      </p>
+      <p>
+        A escolha deve considerar o formato dos olhos, os fios
+        naturais e o resultado que a cliente procura.
+      </p>
+      <ul>
+        <li>Avaliação individualizada</li>
+        <li>Escolha do efeito e dos comprimentos</li>
+        <li>Respeito aos fios naturais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="quiz">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Teste interativo</div>
+      <h2 class="heading">Qual efeito combina com você?</h2>
+      <p class="section-intro">Responda três perguntinhas e receba uma sugestão de estilo.</p>
+    </div>
+
+    <div class="quiz">
+      <div class="progress"><span id="progressBar"></span></div>
+
+      <div class="quiz-step active" data-step="1">
+        <h3>01. Como você prefere seu olhar?</h3>
+        <label class="quiz-option"><input type="radio" name="q1" value="natural"> Natural e delicado</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="volume"> Mais preenchido e volumoso</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="alongado"> Alongado e marcante</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="glamour"> Bem glamouroso</label>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <h3>02. Qual resultado você mais gosta?</h3>
+        <label class="quiz-option"><input type="radio" name="q2" value="leve"> Leveza no dia a dia</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="destaque"> Olhar em destaque</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="fox"> Efeito puxadinho</label>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <h3>03. Como você se sente mais bonita?</h3>
+        <label class="quiz-option"><input type="radio" name="q3" value="discreta"> Com uma produção discreta</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="marcante"> Com um visual marcante</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="ousada"> Gosto de ousar no olhar</label>
+      </div>
+
+      <div class="quiz-buttons">
+        <button class="btn btn-outline" id="previous" onclick="previousStep()" style="display:none">VOLTAR</button>
+        <button class="btn" id="next" onclick="nextStep()">PRÓXIMA PERGUNTA</button>
+      </div>
+
+      <div class="quiz-result" id="quizResult">
+        <h3 id="resultTitle">Seu resultado</h3>
+        <p id="resultDescription"></p>
+        <p style="font-size:12px;margin-top:10px">
+          A sugestão é apenas uma inspiração. A escolha final depende de uma avaliação individual.
+        </p>
+        <a class="btn" href="#agendar" style="margin-top:15px">QUERO CONVERSAR COM A GISELE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Meu trabalho</div>
+      <h2 class="heading">Beleza em cada detalhe</h2>
+      <p class="section-intro">Resultados realizados no nosso espaço. Em breve, esta galeria receberá suas fotos reais.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-slot">FOTO REAL<br>VOLUME BRASILEIRO</div>
+      <div class="gallery-slot">FOTO REAL<br>VOLUME EGÍPCIO</div>
+      <div class="gallery-slot">FOTO REAL<br>FOX EYES</div>
+      <div class="gallery-slot">FOTO REAL<br>SOBRANCELHAS</div>
+      <div class="gallery-slot">FOTO REAL<br>BROW LAMINATION</div>
+      <div class="gallery-slot">FOTO REAL<br>LASH LIFTING</div>
+      <div class="gallery-slot">FOTO REAL<br>HYDRAGLOSS</div>
+      <div class="gallery-slot">FOTO DO ESTÚDIO</div>
+    </div>
+    <p class="gallery-note">As imagens serão substituídas por fotos autorizadas dos seus próprios atendimentos.</p>
+  </div>
+</section>
+
+<section id="valores" style="background:#e9e5dc">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Investimento</div>
+      <h2 class="heading">Menu de serviços</h2>
+      <p class="section-intro">Escolha uma categoria para conferir os valores.</p>
+    </div>
+
+    <div class="price-area">
+      <div class="tabs">
+        <button class="tab active" onclick="showPrices('application',this)">APLICAÇÃO</button>
+        <button class="tab" onclick="showPrices('maintenance',this)">MANUTENÇÃO</button>
+      </div>
+
+      <table class="price-table">
+        <thead><tr><th>PROCEDIMENTO</th><th>VALOR</th></tr></thead>
+        <tbody id="priceRows">
+          <tr><td>Volume Brasileiro</td><td>R$ 90,00</td></tr>
+          <tr><td>Volume Egípcio</td><td>R$ 100,00</td></tr>
+          <tr><td>Volume Glamour</td><td>R$ 110,00</td></tr>
+          <tr><td>Efeito Fox</td><td>R$ 110,00</td></tr>
+        </tbody>
+      </table>
+      <p class="price-note" id="priceNote">Valores de aplicação completa.</p>
+    </div>
+
+    <div class="calculator">
+      <div class="kicker">Calculadora de manutenção</div>
+      <h3>Quando foi sua última aplicação?</h3>
+      <p style="font-size:13px;color:#777;margin-top:8px">
+        Consulte a faixa de manutenção adequada ao seu retorno.
+      </p>
+      <select id="days" onchange="calculateMaintenance()">
+        <option value="">Selecione o período</option>
+        <option value="15">Até 15 dias</option>
+        <option value="21">De 16 a 21 dias</option>
+        <option value="22">Mais de 21 dias</option>
+      </select>
+      <div class="calc-result" id="calcResult"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Tire suas dúvidas</div>
+      <h2 class="heading">Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Quanto tempo dura a extensão? <span>＋</span></button>
+        <div class="faq-answer">A durabilidade varia conforme o ciclo natural dos fios, os cuidados em casa e as características individuais. A manutenção é avaliada conforme a retenção.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Quando devo fazer manutenção? <span>＋</span></button>
+        <div class="faq-answer">As manutenções são avaliadas em até 21 dias, conforme a quantidade de fios que permanece e as condições da extensão.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Preciso pagar sinal para agendar? <span>＋</span></button>
+        <div class="faq-answer">Sim. É necessário um sinal de 50% do valor do procedimento para confirmar o horário.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Posso escolher qualquer efeito? <span>＋</span></button>
+        <div class="faq-answer">A escolha é feita considerando o resultado desejado, o formato dos olhos e a saúde dos fios naturais.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Onde fica o estúdio? <span>＋</span></button>
+        <div class="faq-answer">Estamos no Jardim Monte Verde, Grajaú, São Paulo. O endereço completo é informado após o contato para agendamento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="agendar">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Seu momento chegou</div>
+      <h2 class="heading">Vamos agendar?</h2>
+      <p class="section-intro">Preencha os dados e envie sua solicitação diretamente para o WhatsApp.</p>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+      <label for="name">Seu nome</label>
+      <input id="name" required placeholder="Como podemos te chamar?">
+
+      <label for="service">Procedimento desejado</label>
+      <select id="service" required>
+        <option value="">Selecione</option>
+        <option>Design personalizado</option>
+        <option>Design com henna</option>
+        <option>Brow Lamination</option>
+        <option>Lash Lifting</option>
+        <option>Hydragloss</option>
+        <option>Spa labial</option>
+        <option>Volume Brasileiro</option>
+        <option>Volume Egípcio</option>
+        <option>Volume Glamour</option>
+        <option>Efeito Fox</option>
+        <option>Manutenção de cílios</option>
+      </select>
+
+      <label for="date">Data desejada</label>
+      <input id="date" type="date" required>
+
+      <label for="time">Horário desejado</label>
+      <input id="time" type="time" required>
+
+      <label for="message">Observações</label>
+      <textarea id="message" rows="3" placeholder="Conte um pouquinho do que você procura..."></textarea>
+
+      <button class="btn" type="submit">ENVIAR PELO WHATSAPP</button>
+      <p class="deposit-note">
+        Atenção: o envio não confirma automaticamente o horário.
+        O agendamento será confirmado após meu retorno e o pagamento
+        do sinal de 50%.
+      </p>
+    </form>
+  </div>
+</section>
+
+<section class="location">
+  <div class="container">
+    <div class="kicker">Nosso espaço</div>
+    <h2>Um lugar para cuidar de você.</h2>
+    <p>Jardim Monte Verde • Grajaú • São Paulo</p>
+    <a class="btn" href="https://www.instagram.com/GiseleF.studio/" target="_blank" style="margin-top:22px">ACOMPANHE NO INSTAGRAM</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>GISELE ALMEIDA</strong>
+  <p>Embelezamento do Olhar</p>
+  <div class="social">
+    <a href="https://www.instagram.com/GiseleF.studio/" target="_blank">Instagram</a>
+    <a href="https://wa.me/5511915370738" target="_blank">WhatsApp</a>
+  </div>
+  <p>Jd. Monte Verde • Grajaú • SP</p>
+  <p style="margin-top:15px">© 2026 Gisele Almeida. Todos os direitos reservados.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5511915370738" target="_blank">WHATSAPP ✆</a>
+
+<script>
+const phone = "5511915370738";
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    document.getElementById("navLinks").classList.remove("show");
+  });
+});
+
+// TESTE DE ESTILO
+let currentStep = 1;
+const totalSteps = 3;
+
+function updateQuiz(){
+  document.querySelectorAll(".quiz-step").forEach(step=>{
+    step.classList.toggle("active",Number(step.dataset.step)===currentStep);
+  });
+  document.getElementById("progressBar").style.width=(currentStep/totalSteps*100)+"%";
+  document.getElementById("previous").style.display=currentStep===1?"none":"inline-block";
+  document.getElementById("next").textContent=currentStep===3?"VER MEU RESULTADO":"PRÓXIMA PERGUNTA";
+}
+
+function nextStep(){
+  const selected=document.querySelector('input[name="q'+currentStep+'"]:checked');
+  if(!selected){
+    alert("Escolha uma opção para continuar.");
+    return;
+  }
+  if(currentStep<totalSteps){
+    currentStep++;
+    updateQuiz();
+  }else{
+    showQuizResult();
+  }
+}
+
+function previousStep(){
+  if(currentStep>1){
+    currentStep--;
+    updateQuiz();
+  }
+}
+
+function showQuizResult(){
+  const a=document.querySelector('input[name="q1"]:checked').value;
+  const b=document.querySelector('input[name="q2"]:checked').value;
+  const c=document.querySelector('input[name="q3"]:checked').value;
+
+  let result="Volume Brasileiro";
+  let description="Uma sugestão delicada e versátil para valorizar seu olhar.";
+
+  if(a==="alongado"||b==="fox"){
+    result="Efeito Fox";
+    description="Uma sugestão para quem ama um olhar alongado e marcante.";
+  }else if(a==="glamour"||c==="ousada"){
+    result="Volume Glamour";
+    description="Uma sugestão para quem gosta de um visual mais intenso.";
+  }else if(a==="volume"||b==="destaque"||c==="marcante"){
+    result="Volume Egípcio";
+    description="Uma sugestão para quem deseja mais preenchimento e destaque.";
+  }
+
+  document.getElementById("resultTitle").textContent="Sua sugestão: "+result;
+  document.getElementById("resultDescription").textContent=description;
+  document.querySelectorAll(".quiz-step").forEach(s=>s.classList.remove("active"));
+  document.querySelector(".quiz-buttons").style.display="none";
+  document.getElementById("quizResult").style.display="block";
+}
+
+// TABELA DE VALORES
+const applicationPrices=[
+  ["Volume Brasileiro","R$ 90,00"],
+  ["Volume Egípcio","R$ 100,00"],
+  ["Volume Glamour","R$ 110,00"],
+  ["Efeito Fox","R$ 110,00"],
+  ["Design personalizado","R$ 35,00"],
+  ["Design com henna","R$ 45,00"],
+  ["Brow Lamination","R$ 85,00"],
+  ["Lash Lifting","R$ 85,00"],
+  ["Hydragloss","R$ 85,00"],
+  ["Spa labial","R$ 15,00"]
+];
+
+const maintenancePrices=[
+  ["Volume Brasileiro","Consultar"],
+  ["Volume Egípcio","Consultar"],
+  ["Volume Glamour","Consultar"],
+  ["Efeito Fox","Consultar"]
+];
+
+function showPrices(type,button){
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  button.classList.add("active");
+  const rows=type==="application"?applicationPrices:maintenancePrices;
+  document.getElementById("priceRows").innerHTML=rows.map(row=>
+    "<tr><td>"+row[0]+"</td><td>"+row[1]+"</td></tr>"
+  ).join("");
+  document.getElementById("priceNote").textContent=
+    type==="application"?"Valores de aplicação completa.":
+    "Manutenção: até 15 dias ou de 16 a 21 dias. Consulte os valores antes de agendar.";
+}
+
+// CALCULADORA
+function calculateMaintenance(){
+  const value=document.getElementById("days").value;
+  const result=document.getElementById("calcResult");
+  if(value==="15"){
+    result.textContent="Você está na faixa de até 15 dias. Consulte o valor da manutenção.";
+  }else if(value==="21"){
+    result.textContent="Você está na faixa de 16 a 21 dias. Consulte o valor da manutenção.";
+  }else if(value==="22"){
+    result.textContent="Acima de 21 dias, pode ser necessária uma nova aplicação. Vamos avaliar pelo WhatsApp.";
+  }else{
+    result.textContent="";
+  }
+}
+
+// FAQ
+function toggleFaq(button){
+  button.parentElement.classList.toggle("open");
+}
+
+// AGENDAMENTO
+const dateField=document.getElementById("date");
+const today=new Date();
+const todayLocal=new Date(today.getTime()-today.getTimezoneOffset()*60000)
+  .toISOString().split("T")[0];
+dateField.min=todayLocal;
+
+document.getElementById("bookingForm").addEventListener("submit",function(event){
+  event.preventDefault();
+
+  const name=document.getElementById("name").value.trim();
+  const service=document.getElementById("service").value;
+  const date=document.getElementById("date").value;
+  const time=document.getElementById("time").value;
+  const message=document.getElementById("message").value.trim();
+
+  const [year,month,day]=date.split("-");
+  const formattedDate=day+"/"+month+"/"+year;
+
+  const text=
+    "Olá, Gisele! Gostaria de solicitar um horário.%0A%0A"+
+    "Nome: "+encodeURIComponent(name)+"%0A"+
+    "Procedimento: "+encodeURIComponent(service)+"%0A"+
+    "Data: "+encodeURIComponent(formattedDate)+"%0A"+
+    "Horário: "+encodeURIComponent(time)+"%0A"+
+    "Observações: "+encodeURIComponent(message||"Nenhuma")+
+    "%0A%0ASei que o horário depende da confirmação e do sinal de 50%.";
+
+  window.open("https://wa.me/"+phone+"?text="+text,"_blank");
+});
+
+updateQuiz();
+</script>
+
+</body>
+</html>
